@@ -901,7 +901,7 @@ FMT_INLINE std::basic_string<typename S::char_type> format(const S&,
     }
   }
 #endif
-  constexpr auto compiled = detail::compile<Args...>(S());
+  constexpr auto compiled = detail::compile(S());
 #ifdef __cpp_if_constexpr
   if constexpr (std::is_same<remove_cvref_t<decltype(compiled)>,
                              detail::unknown_format>()) {
